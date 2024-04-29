@@ -164,15 +164,15 @@ impl EfuseBlock {
         match self {
             Block0 => efuse.rd_wr_dis().as_ptr(),
             Block1 => efuse.rd_mac_spi_sys_0().as_ptr(),
-            Block2 => efuse.rd_sys_part1_data0().as_ptr(),
-            Block3 => efuse.rd_usr_data0().as_ptr(),
-            Block4 => efuse.rd_key0_data0().as_ptr(),
-            Block5 => efuse.rd_key1_data0().as_ptr(),
-            Block6 => efuse.rd_key2_data0().as_ptr(),
-            Block7 => efuse.rd_key3_data0().as_ptr(),
-            Block8 => efuse.rd_key4_data0().as_ptr(),
-            Block9 => efuse.rd_key5_data0().as_ptr(),
-            Block10 => efuse.rd_sys_part2_data0().as_ptr(),
+            Block2 => efuse.rd_sys_part1_data(0).as_ptr(),
+            Block3 => efuse.rd_usr_data(0).as_ptr(),
+            Block4 => efuse.rd_key(0).data(0).as_ptr(),
+            Block5 => efuse.rd_key(1).data(0).as_ptr(),
+            Block6 => efuse.rd_key(2).data(0).as_ptr(),
+            Block7 => efuse.rd_key(3).data(0).as_ptr(),
+            Block8 => efuse.rd_key(4).data(0).as_ptr(),
+            Block9 => efuse.rd_key(5).data(0).as_ptr(),
+            Block10 => efuse.rd_sys_part2_data(0).as_ptr(),
         }
     }
 }
